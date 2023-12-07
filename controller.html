@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>暖气</title>
+</head>
+<body>
+
+<p id="myText">
+    第一组  餐厅+入户<br>
+    第二组  次卧西半边+阳光房<br>
+    第三组  次卧东半边+客厅西边<br>
+    第四组  阳台<br>
+    第五组  客厅中部<br>
+    第六组  客厅东部+主卧西边<br>
+    第七组  主卧+主卫一部<br>
+    第八组  书房+主卫一部<br>
+</p>
+
+<input type="text" id="myInput" value="">
+<button onclick="changeText()">修改文本</button>
+
+<button onclick="decreaseFontSize()">缩小字体</button>
+<button onclick="increaseFontSize()">放大字体</button>
+
+<script>
+    function changeText() {
+        var text = document.getElementById("myInput").value;
+        localStorage.setItem("text", text);
+        document.getElementById("myText").innerHTML = text;
+    }
+
+    function decreaseFontSize() {
+        var fontSize = parseFloat(getComputedStyle(document.getElementById("myText")).fontSize);
+        fontSize -= 2;
+        document.getElementById("myText").style.fontSize = fontSize + "px";
+    }
+
+    function increaseFontSize() {
+        var fontSize = parseFloat(getComputedStyle(document.getElementById("myText")).fontSize);
+        fontSize += 2;
+        document.getElementById("myText").style.fontSize = fontSize + "px";
+    }
+
+    // 读取 Local Storage 中的文本
+    if (localStorage.getItem("text")) {
+        document.getElementById("myText").innerHTML = localStorage.getItem("text");
+    }
+</script>
+
+</body>
+</html>
