@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Github Page demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script>
+        window.onload = function() {
+            document.getElementById('main-content').innerHTML = '阳台'
+        }
+    </script>
+
+    <script type="text/javascript">
+        function zoom(){try{var s=document.getElementById("main-content").style.fontSize;var size=parseInt(s)+1;document.getElementById("main-content").style.fontSize=size+"px";}catch(e){}}
+        function zoom_(){try{var s=document.getElementById("main-content").style.fontSize;var size=parseInt(s)-1;document.getElementById("main-content").style.fontSize=size+"px";}catch(e){}}
+    </script>
+
+</head>
+<body>
+
+<div id="main-content" class="article-content" style="font-size: 17px;">
+
+</div>
+
+<br/>
+
+<a class="bianjir_1" target="_self" href="javascript:void(0);"  style="font-size: 20px" onclick="zoom_()">缩小</a>
+<br/>
+<a class="bianjir_2" target="_self" href="javascript:void(0);" style="font-size: 20px" onclick="zoom()">放大</a>
+</body>
+</html>
